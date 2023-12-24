@@ -192,7 +192,7 @@ const NewFeed = () => {
                             </Grid>
                             {blogs && blogs.map((item, index) => {
                                 return (
-                                    <Grid item xs={12} key={index}>
+                                    <Grid item xs={12} key={index} sx={{zIndex: 100}}>
                                         <CustomCard>
                                             <CardContent>
                                                 <Stack  direction="row" justifyContent="space-between">
@@ -213,7 +213,7 @@ const NewFeed = () => {
                             })}
 
 
-                            <Grid item xs={12}>
+                            <Grid item xs={12} sx={{zIndex: 100}}>
                                 <CustomCard>
                                     <CardContent sx={{ display: "flex", justifyContent: "center" }}>
                                         <CustomPagination count={Math.ceil(total/3)} variant="outlined" siblingCount={0} onChange={handleChangePagination} />
