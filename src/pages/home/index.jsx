@@ -14,10 +14,24 @@ const Home = () => {
                             Cũng như điều ước và mong muốn của bản thân cho tương lai sắp tới. <br />
                             Mọi chia sẻ và câu chuyện của bạn đều được ẩn danh nên bạn không cần lo gì cả. <br />
                             <br />
-                            Nhân tiện thì nếu bạn có nghe thấy tiếng mèo kêu hay gì đó thì đó là âm thanh tới từ trang web nhá.
+                            Xin trân trọng cảm ơn:
+                            <br /> 
+                            Background - Danh Hòa Thuận
+                            <br /> 
+                            Nhạc nền - <a style={{color: "white"}} href="https://www.youtube.com/@ChillwithTaiki"  target="_blank">Chill with Taiki </a>
+                            <br />
+                            Cùng những nguồn free khác mà mình đã xài ké ( ͡° ͜ʖ ͡°)
+                            <br />
+                            <br />
+                            P/s 1: Nhân tiện thì nếu bạn có nghe thấy tiếng mèo kêu hay gì đó thì đó là âm thanh tới từ trang web.
+                            <br />
+                            P/s 2: Web làm for fun nên sẽ có vài thứ hơi bất ổn, mọi người thông cảm nhá
                             <br />
                             <br />
                             Chúc bạn một ngày tốt lành!
+                            <br />
+                            <br />
+                             -- Mọi thắc mắc liên hệ: Nguyen Hung Khang --
                         </Typography>
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center"}}>
                             <CustomCard>
@@ -30,6 +44,7 @@ const Home = () => {
                         </Box>
 
                     </Box>
+
                 </Box>
             </Box>
     );
