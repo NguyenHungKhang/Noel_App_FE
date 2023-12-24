@@ -101,7 +101,7 @@ const Edit = () => {
                             <Grid item xs={12}>
                                 <CustomCard>
                                     <CardContent>
-                                        <Typography fontFamily="inherit" sx={{ mb: 1 }}>
+                                        <Typography fontFamily="inherit" sx={{ mb: 1}}>
                                             Mã người dùng: {user && user.userCode}
                                         </Typography>
                                         <CustomButton onClick={saveBlog}>

@@ -130,10 +130,9 @@ const NewFeed = () => {
                                         <Typography fontFamily="inherit" sx={{ mb: 3, mt: 1 }} fontSize={18} fontWeight={500}>
                                             Tới từ: {author}
                                         </Typography>
-                                        <Typography component="div" fontFamily="inherit" paragraph height="60vh" overflow="auto"
+                                        <Typography component="div" fontFamily="inherit" paragraph height="57vh" overflow="auto"
                                             sx={{
                                                 my: 3,
-                                                userSelect: "none",
                                                 wordWrap: "break-word",
                                                 whiteSpace: "pre-wrap",
                                             }} className={classes.root}>
