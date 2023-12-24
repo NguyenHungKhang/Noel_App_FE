@@ -34,12 +34,20 @@ const Layout = () => {
             try {
                 const ip = await fetch('https://geolocation-db.com/json/');
                 const ipv4 = await ip.json();
+                let userId;
                 const user = await api.UserApi.getUserByIpv4(ipv4.IPv4);
-                if (user.data.error)
-                    await api.UserApi.addUser(ipv4.IPv4);
-                dispatch(setUser(user.data));
+                if (user.data.error) {
+                    const newUser = await api.UserApi.addUser(ipv4.IPv4);
+                    dispatch(setUser(newUser.data));
+                    userId = newUser.data._id
+                }
+                else {
+                    dispatch(setUser(user.data));
+                    userId = user.data._id;
+                }
+                    
 
-                const blog = await api.BlogApi.getBlogByUser(user._id)
+                const blog = await api.BlogApi.getBlogByUser(userId)
                 if (!blog.data.error) {
                     dispatch(setBlog(blog.data.content))
                 }

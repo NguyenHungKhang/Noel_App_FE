@@ -2,7 +2,7 @@ import './App.css';
 import Table from './components/table';
 import * as React from 'react';
 import Layout from './components/Layout';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Edit from './pages/edit';
 import NewFeed from './pages/newfeed';
 import { AnimatePresence } from 'framer-motion';
@@ -17,9 +17,10 @@ function App() {
       <AnimatePresence mode="wait">
 
         <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
           <Route path="/edit" element={<Edit />} />
           <Route path="/new-feed" element={<NewFeed />} />
-          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
 
       </AnimatePresence>
