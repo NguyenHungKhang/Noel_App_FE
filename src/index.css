@@ -1,0 +1,18 @@
+/* index.css */
+
+@font-face {
+    font-family: "SVN-Retron 2000";
+    src: url('./assets/fonts/SVN-Retron\ 2000.otf')
+}
+
+body {
+    margin: 0;
+    font-family: "SVN-Retron 2000";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=60133) !important;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
