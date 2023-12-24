@@ -20,7 +20,10 @@ export const saveBlog = async (data) => {
 
 export const getBlogs = async (sort, page) => {
     try {
-        const response = await axios.get("https://noel-for-fun.onrender.com/api/v1/blog/");
+        const data = {
+            "page": page
+        }
+        const response = await axios.get("https://noel-for-fun.onrender.com/api/v1/blog/", {params: data});
         console.log(response)
         return response;
     } catch (err) {
@@ -32,7 +35,6 @@ export const getBlogs = async (sort, page) => {
 export const increaseView = async (id) => {
     try {
         const response = await axios.get("https://noel-for-fun.onrender.com/api/v1/blog/increase-view/"+id);
-        console.log(response)
         return response;
     } catch (err) {
         console.error(err);
