@@ -124,7 +124,7 @@ const NewFeed = () => {
 
                     <Grid item xs={8} sx={{ position: "relative" }}>
                         <CustomCard >
-                            <CardContent sx={{ height: "69vh" }}>
+                            <CardContent sx={{ height: "62.5vh" }}>
                                 {blog ?
                                     <>
                                         <Typography fontFamily="inherit" sx={{ mb: 3, mt: 1 }} fontSize={18} fontWeight={500}>

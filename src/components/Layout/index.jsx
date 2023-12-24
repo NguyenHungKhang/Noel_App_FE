@@ -32,12 +32,14 @@ const Layout = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const user = await api.UserApi.getUserByIpv4();
-                if (user.status !== 200)
-                    await api.UserApi.addUser();
+                const ip = await fetch('https://geolocation-db.com/json/');
+                const ipv4 = await ip.json();
+                const user = await api.UserApi.getUserByIpv4(ipv4.IPv4);
+                if (user.data.error)
+                    await api.UserApi.addUser(ipv4.IPv4);
                 dispatch(setUser(user.data));
 
-                const blog = await api.BlogApi.getBlogByUser(user.data._id)
+                const blog = await api.BlogApi.getBlogByUser(user._id)
                 if (!blog.data.error) {
                     dispatch(setBlog(blog.data.content))
                 }
@@ -78,12 +80,13 @@ const Layout = () => {
                 </Box>
             </Backdrop>
             {/* {(location.pathname === "/new-feed" || location.pathname === "/edit") &&  */}
-            <Box sx={{ width: "100%", height: "100vh", position: "absolute", top: -214,
-                opacity:  !(location.pathname === "/new-feed" || location.pathname === "/edit") ? "0" : "1",
+            <Box sx={{
+                width: "100%", height: "100vh", position: "absolute", top: -214,
+                opacity: !(location.pathname === "/new-feed" || location.pathname === "/edit") ? "0" : "1",
                 transition: "all 0.2s",
                 transitionDelay: "1s",
                 visibility: !(location.pathname === "/new-feed" || location.pathname === "/edit") ? "hidden" : "visible",
-             }}>
+            }}>
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
                     <Grid container spacing={3} display="flex" justifyContent="center" sx={{ width: { lg: "80%" } }}>
                         <Grid item xs={8}>
